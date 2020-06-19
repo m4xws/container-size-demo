@@ -1,0 +1,7 @@
+FROM gcr.io/distroless/java:8
+
+COPY target/container-size-demo.jar /opt/container-size-demo.jar
+
+EXPOSE 9080
+
+ENTRYPOINT exec java -Djava.net.preferIPv4Stack=true -Djava.net.preferIPv4Addresses=true -jar /opt/container-size-demo.jar
